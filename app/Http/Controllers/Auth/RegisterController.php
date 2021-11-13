@@ -24,7 +24,7 @@ class RegisterController extends Controller
 
    /* protected $redirectTo = '/home'; */
 
-    protected $redirectTo = '/registration_form';
+    protected $redirectTo = '/addproductlist';
 
 
 

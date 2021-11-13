@@ -58,7 +58,7 @@
 
 							</div>
 						</div>
-
+						<div class="form-group">							<label class="col-md-3 control-label">Product Qty</label>							<div class="col-md-9">                                            							<div class="input-group">							<span class="input-group-addon"><span class="fa fa-pencil" style="margin-bottom: 8px;"></span></span>							<input type="text" class="form-control" id="qty" name="qty"  placeholder="0"  value="{{ $ppls->productquantity }}">							</div>                                            							</div>						</div>
 						
 						
 

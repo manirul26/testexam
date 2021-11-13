@@ -28,7 +28,7 @@ class LoginController extends Controller
      // $user_id = Auth::user()->id;
 	   	 
 
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/addproductlist';
    /*  protected function redirectTo()
     {
         if(Auth::user()->UserType == 'Admin')

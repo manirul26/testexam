@@ -12,6 +12,20 @@
                 <div class="card-body" style="background-color:#EEEFEE; border-radius: 0px; overflow: auto;">
                    <form method="POST" action="{{ route('register') }}">
                         @csrf
+						
+						<div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Name ') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="text" type="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required>
+
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email Address ') }}</label>
 

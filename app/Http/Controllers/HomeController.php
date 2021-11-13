@@ -86,7 +86,7 @@ class HomeController extends Controller
 
        session()->put('bussid', $id);
 
-        return view('home');
+        return view('addproductlist');
 
        
 

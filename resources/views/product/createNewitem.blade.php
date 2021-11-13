@@ -120,25 +120,25 @@
                 rules: {
                    // code: "required",
                     pcode: "required",
-                    pname: "required",                    brand: "required",                },
+                    pname: "required",                    brand: "required",                    proudctqty: "required",                },
                 messages: {
 
                     pcode: "Insert the Product Code",
-                    pname: "Insert the product name",                    brand: "Insert the product name",
+                    pname: "Insert the product name",                    brand: "Insert the brand",                    proudctqty: "Insert the proudctqty",
 
                 },
                 submitHandler: function(form) {
  			var _token = $('input[name="_token"]').val();
 			var brand = $('#brand').val();
 			var pcode = $('#pcode').val();
-			var pname = $('#pname').val();
+			var pname = $('#pname').val();			var proudctqty = $('#proudctqty').val();
 			$.ajax({
 			headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 			},
 			url:'./addproduct/adddatapost',
 			type: "GET",
-			data: { pcode:pcode,_token:_token,pname:pname,brand:brand},
+			data: { pcode:pcode,_token:_token,pname:pname,brand:brand,proudctqty:proudctqty},
 			//processData: false,
 			//contentType: false, pcode pname brand
 			success: function(data, status, xhr) {

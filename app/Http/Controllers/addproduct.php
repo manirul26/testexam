@@ -48,10 +48,11 @@ $pcode=$request->pcode;
 $pname=$request->pname; 
 
 $brand=$request->brand; 
+$proudctqty=$request->proudctqty; 
 
 
 
-         if($pcode =="" ||  $pname=="" || $brand=="")
+         if($pcode =="" ||  $pname=="" || $brand=="" || $proudctqty =="")
 
          {
 
@@ -86,9 +87,9 @@ $brand=$request->brand;
                     'productid'    =>  $pcode,
 
                    'proudctname'    =>  $pname,
-                   'productbrand'    =>  $pname,
-                   'productquantity'    =>  $pname,
-                   'galleryimage'    =>  $pname,
+                   'productbrand'    =>  $brand,
+                   'productquantity'    =>  $proudctqty,
+                   'galleryimage'    =>  '',
                    'EnteredBy'    =>  $user_id,
                    'UpdateBy'    =>  '',
 
