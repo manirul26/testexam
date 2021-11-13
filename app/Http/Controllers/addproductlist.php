@@ -106,11 +106,11 @@ class addproductlist extends Controller
     {
 
             $IDatuo = $request->get('user_id');
-               $data = array(
+/*                $data = array(
                 'productid'    =>  $IDatuo
-                );
+                ); */
                 // print_r($data);
-                $sqlupdate = DB::table('product')->where('productid',$IDatuo)->delete($data);
+              //  $sqlupdate = DB::table('product')->where('productid',$IDatuo)->delete($data);								$sqlupdate = DB::table('product')->where('productid', $IDatuo)->delete();
                 if($sqlupdate > 0)
                 {
                 echo "Delete";
