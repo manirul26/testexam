@@ -52,7 +52,7 @@
 
                      <li class="active">
 
-                        <a href="{{ route('home') }}"><span class="fa fa-desktop"></span> <span class="xn-text" >Dashboard 
+                        <a href="{{ route('addproductlist') }}"><span class="fa fa-desktop"></span> <span class="xn-text" >Dashboard 
 
 						<?php //$username = session()->get('username'); 
 
