@@ -73,7 +73,7 @@ class HomeController extends Controller
 
       //  return view('home');
 
-        return view('dashboard');
+        return view('addproductlist');
 
        // return view('/'); // this will redirect to welcome page
 

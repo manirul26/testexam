@@ -33,6 +33,9 @@ Route::get('/addproductlist/deleteinfo', 'addproductlist@deleteinfo')->name('del
 Route::get('/addproductlist/fetch_data', 'addproductlist@fetch_data');
 
 
+//Route::post('product_form', 'addproduct@adddatapost')->name('adddatapost');
+
+
 Route::post('/proudctlist_edit/{id}/studentpendinglistsubmitEdit','studentpendinglist_edit@add_dataedit');
 
 Route::get('/proudctlist_edit/{id}/edit', 'proudctlist_edit@index')->name('proudctlist_edit');

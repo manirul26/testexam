@@ -17,21 +17,7 @@
 					</div>
 					
 					<div style="width: 40%;float: right;text-align: right;">
-					
-					 <div class="btn-group" style="margin-top: 14px;">
-							<a href="#" class="btn btn-default">Report</a>
-							<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
-							<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li><a href="#">Separated link</a></li>
-							</ul>
-						</div>
-
-
-					
+									
 					<a href="{{ route('addproduct')}}" class="btn btn-primary" 
 					style="
 						background-color: #0D83DD;
@@ -70,29 +56,13 @@
     <table class="table table-striped table-bordered">
      <thead>
       <tr>
-       <th width="5%" class="sorting" data-sorting_type="asc" data-column_name="id" style="cursor: pointer">ID <span id="id_icon"></span></th>
-       <th width="5%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Product Code <span id="post_title_icon"></span></th>
+       <th width="5%" class="sorting" data-sorting_type="asc" data-column_name="id" style="cursor: pointer">Prd ID <span id="id_icon"></span></th>
+
         <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Product Name <span id="post_title_icon"></span></th>
 
-         <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Description <span id="post_title_icon"></span></th>
-
-          <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Color <span id="post_title_icon"></span></th>
-        <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Size <span id="post_title_icon"></span></th>
-    <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">DP Price <span id="post_title_icon"></span></th>
-     <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Sales Price <span id="post_title_icon"></span></th>
-
-
- <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Discount <span id="post_title_icon"></span></th>
-
- <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Vat <span id="post_title_icon"></span></th>
- <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Points <span id="post_title_icon"></span></th>
-       <th width="5%">Status</th>
-       <th width="5%">Edit</th>
-       <th width="5%">Delete
-	   
-	   
-	   
-	   </th>
+         <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Brand <span id="post_title_icon"></span></th>
+
+ <th width="10%" class="sorting" data-sorting_type="asc" data-column_name="post_title" style="cursor: pointer">Qty <span id="post_title_icon"></span></th>
       </tr>
      </thead>
      <tbody>

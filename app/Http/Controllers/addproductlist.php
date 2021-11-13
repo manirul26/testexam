@@ -23,73 +23,15 @@ class addproductlist extends Controller
     }
     function finddatalist(Request $request)
     {
-		if($request->ajax())
-		{
-			//$sort_by = $request->get('sortby');
-			$prdtype = $request->get('prdtype');
-			//$sort_type = $request->get('sorttype');
-			$query = $request->get('query');
-			//$query = str_replace(" ", "%", $query);
-			if($prdtype=="P.Code")
-			{
-				$data = DB::table('xproduct')
-				->where('bussid', '=', session()->get('bussid'))
-				->where('pcode', 'like', '%'.$query.'%')
-				//->Where('pname', 'like', '%'.$query.'%')
-				->orderBy('id', 'DESC')
-				->paginate(10);
-			}
-			else
-			{
-			
-				$data = DB::table('xproduct')
-				->where('bussid', '=', session()->get('bussid'))
-				//->where('pcode', 'like', '%'.$query.'%')
-				->Where('pname', 'like', '%'.$query.'%')
-				->orderBy('id', 'DESC')
-				->paginate(10);
-			}
-		
-     // DB::enableQueryLog(); 
-
-
-			return view('inventory/itemlist_pagination_data', compact('data'))->render();
-		}
     }
 
     function fetch_data(Request $request)
     {
 		if($request->ajax())
 		{
-			$sort_by = $request->get('sortby');
-			$prdtype = $request->get('prdtype');
-			$sort_type = $request->get('sorttype');
-			$query = $request->get('query');
-			$query = str_replace(" ", "%", $query);
-			if($prdtype=="P.Code")
-			{
-				$data = DB::table('xproduct')
-				->where('bussid', '=', session()->get('bussid'))
-				->where('pcode', 'like', '%'.$query.'%')
-				//->Where('pname', 'like', '%'.$query.'%')
-				->orderBy('id', 'DESC')
-				->paginate(10);
-			}
-			else
-			{
-			
-				$data = DB::table('xproduct')
-				->where('bussid', '=', session()->get('bussid'))
-				//->where('pcode', 'like', '%'.$query.'%')
-				->Where('pname', 'like', '%'.$query.'%')
-				->orderBy('id', 'DESC')
-				->paginate(10);
-			}
-		
-     // DB::enableQueryLog(); 
+	$sort_by = $request->get('sortby');		$sort_type = $request->get('sorttype');		$query = $request->get('query');		$query = str_replace(" ", "%", $query);		$data = DB::table('product')		->orderBy('productid', 'DESC')		->paginate(10);
 
-
-			return view('inventory/itemlist_pagination_data', compact('data'))->render();
+			return view('product/itemlist_pagination_data', compact('data'))->render();
 		}
     }
 	function test(Request $request)
@@ -98,11 +40,10 @@ class addproductlist extends Controller
 		$sort_type = $request->get('sorttype');
 		$query = $request->get('query');
 		$query = str_replace(" ", "%", $query);
-		$data = DB::table('xproduct')
-		 ->where('bussid', '=', session()->get('bussid'))
-		->orderBy('id', 'DESC')
+		$data = DB::table('product')
+		->orderBy('productid', 'DESC')
 		->paginate(10);
-      return view('inventory/itemlist_pagination_data', compact('data'))->render();
+      return view('product/itemlist_pagination_data', compact('data'))->render();
 
     }
     function update_data(Request $request)
@@ -163,26 +104,13 @@ class addproductlist extends Controller
     }
     function deleteinfo(Request $request)
     {
-        //  $id= $request->user_id;  
+
             $IDatuo = $request->get('user_id');
-            $user = DB::table('xproduct')->where('id','=',$IDatuo)->where('bussid','=',session()->get('bussid'))->first();
-            $productcode = $user->pcode;
-
-            $id = DB::table('journal_entry')
-            ->where('pcode','=',$productcode)
-            ->where('bussid','=',session()->get('bussid'))
-            ->count('pcode');
-            if($id>0)
-            {
-            echo "Exits";
-            }
-            else
-            {
-                $data = array(
-                'ID'    =>  $IDatuo
+               $data = array(
+                'productid'    =>  $IDatuo
                 );
                 // print_r($data);
-                $sqlupdate = DB::table('xproduct')->where('id',$IDatuo)->delete($data);
+                $sqlupdate = DB::table('product')->where('productid',$IDatuo)->delete($data);
                 if($sqlupdate > 0)
                 {
                 echo "Delete";
@@ -190,11 +118,7 @@ class addproductlist extends Controller
                 else
                 {
                 echo "Failed";
-                }
-            }
-
-
-         //echo json_encode($arr);
+                }
     }
     function yesdelete(Request $request)
     {

@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.app3')
 @section('content')
 <div class="content-wrapper" style="background-color:#fdfcfc">
     <div class="container-fluid" >
@@ -36,9 +36,9 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label">Product Brand</label>
 							<div class="col-md-9">                                            
-							<input type="text" class="form-control" id="Description" name="Description"  placeholder="Proudct Description if Any">			  
+							<input type="text" class="form-control" id="brand" name="brand"  placeholder="Product Brand">			  
 							</div>
-						</div>
+						</div>						<div class="form-group">							<label class="col-md-3 control-label">Product Qty</label>							<div class="col-md-9">                                            							<input type="text" class="form-control" id="proudctqty" name="proudctqty"  placeholder="0">			  							</div>						</div>
 
 
 				</div><!-- col-md-6 -->
@@ -112,40 +112,7 @@
 <script src="{{ asset('Asset/js/jquery.validate.min.js')}}" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" id="theme" href="{{ asset('Asset/js/toastr.min.css') }}"/>
 <link href="{{ asset('Asset/sweetAlert/sweetalert.css')}}" rel="stylesheet">
-<script src="{{ asset('Asset/sweetAlert/sweetalert.js')}}"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-//alert('Monir');
-		$('#Category').on('change',function() {
-			//$('#level1').html('');
-			$('#SubCategory').html('');
-			var _token = $('input[name="_token"]').val();
-			var bussid = $('#bussid').val();
-			var Category = $('#Category').val();
-		//	 alert(bussid+AccountType);
-			$.ajax({
-			headers: {
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-			},
-			url:'./addproduct/findsubcategory',
-			type: "GET",
-			data: { bussid : bussid, Category : Category},
-			//processData: false,
-			//contentType: false,
-			success: function(data, status, xhr) {
-			// console.log(data);
-			//alert(data);
-			//$('.level2').html(data);
-			$('#SubCategory').html(data);
-			}
-			});
-		}); // add close
-			
-			//$(document).on('submit', '#validate', function(event){  
-			//		alert();
-			//});
-});
-</script>
+<script src="{{ asset('Asset/sweetAlert/sweetalert.js')}}"></script>
 <script type="text/javascript">
        $('document').ready(function()
 	   { 
@@ -153,86 +120,45 @@ $(document).ready(function(){
                 rules: {
                    // code: "required",
                     pcode: "required",
-                    pname: "required",
-                    Category: "required",
-                    SubCategory: "required",
-                    Discount: "required",
-                    level1: "required",
-                    salesprice: "required",
-                    Purchaseprice: "required",
-                    Category: "required",
-                    SubCategory: "required",
-                    unit: "required",
-                    Points: "required"
-                },
+                    pname: "required",                    brand: "required",                },
                 messages: {
-                 //   code: "Please enter your Employee Code",
-                    pcode: "Insert the Product Code",
-                    unit: "Select the Unit from List",
-                    pname: "Insert the product name",
-                    Category: "select the category from list",
-                    Discount: "Insert the discount",
-                    SubCategory: "Insert the Required Fields",
-                    level1: "Insert the Required Fields",
-                    salesprice: "Insert the Required Fields",
-                    Purchaseprice: "Insert the Required Fields",
-                    SubCategory: "Insert the Required Fields",
-                    Points: "Insert the Required Fields"
-                   
+
+                    pcode: "Insert the Product Code",
+                    pname: "Insert the product name",                    brand: "Insert the product name",
+
                 },
                 submitHandler: function(form) {
  			var _token = $('input[name="_token"]').val();
-			var bussid = $('#bussid').val();
+			var brand = $('#brand').val();
 			var pcode = $('#pcode').val();
-			var pname = $('#pname').val();
-			var Description = $('#Description').val();
-			var xcolor = $('#xcolor').val();
-			var xsize = $('#xsize').val();
-			var unit = $('#unit').val();
-			var Category = $('#Category').val();
-			var SubCategory = $('#SubCategory').val();
-			var status = $('#status').val();
-			var expirydate = $('#expirydate').val();
-			var currentbalance = $('#currentbalance').val();
-			
-			var salesprice = $('#salesprice').val();
-			var Purchaseprice = $('#Purchaseprice').val();
-			var Discount = $('#Discount').val();
-			var Vat = $('#Vat').val();
-            var Points = $('#Points').val();
-            var alertstock = $('#alertstock').val();
-            var level1 = $('#level1').val();
-var openingbal = $('#openingbal').val();
-var Openingbaldata = $('#Openingbaldata').val();
-           // alert(level1);
-					var jdate='dd';
+			var pname = $('#pname').val();
 			$.ajax({
 			headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 			},
 			url:'./addproduct/adddatapost',
 			type: "GET",
-			data: { bussid : bussid, pcode:pcode,_token:_token,pname:pname,Description:Description,unit:unit,Category:Category,SubCategory:SubCategory,status:status,Openingbaldata:Openingbaldata,expirydate:expirydate,currentbalance:currentbalance,salesprice:salesprice,Purchaseprice:Purchaseprice,Discount:Discount,Vat:Vat,Points:Points,alertstock:alertstock,level1:level1,openingbal:openingbal},
+			data: { pcode:pcode,_token:_token,pname:pname,brand:brand},
 			//processData: false,
-			//contentType: false,
+			//contentType: false, pcode pname brand
 			success: function(data, status, xhr) {
 			//alert(data);
 			     if(data == 'save')
 			 	{
-			 		swal("Success!", "Saved Successfully", "success");
+			 		alert('save')
 					
 			 	}
 			 	else if(data == 'warning')
 			 	{
-			 		swal("Exits", "Product Code Exits, please change ID", "warning");
+					alert('Product Code Exits, please change ID')
 			 	}
 			 	else if(data == 'Required')
 			 	{
-			 		swal("Required", "Insert the Required Fields", "warning");
+			 		alert('Insert the required Fileds')
 			 	}
 			 	else
 			 	{
-			 		swal("Failed", "Failed to Insert", "warning");
+			 		alert('Failed')
 			 	} 
 		//	alert(data);
 			
