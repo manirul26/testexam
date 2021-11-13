@@ -111,7 +111,7 @@
 										  <li><a href="{{ route('register') }}">Registration</a></li>
 										  @endif 
 										  @else
-										  <li><a href="{{ route('login') }}">Dashboard</a></li>	
+										  <li><a href="{{ route('addproductlist') }}">Dashboard</a></li>	
 
 								     @endguest
                                     </ul>
