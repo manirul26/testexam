@@ -1,6 +1,5 @@
 @extends('layouts.header')
 @section('content')
-<?php $userid = session()->get('bussid'); ?>
 <div class="content-wrapper" style="background-color:#fdfcfc">
     <div class="container-fluid" >
 	<div class="panel panel-default" style="margin-top: 10px;">
