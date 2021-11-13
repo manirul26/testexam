@@ -1,0 +1,1 @@
+insert into `users` (`name`, `email`, `password`, `updated_at`, `created_at`) values ('manirul26@gmail.com', 'manirul26@gmail.com', '$2y$10$/nWNQQ3tHQsnNUfRt9ZGM.3c6745a7ttMpS1dY8YKBbhYl4J2x0ra', '2019-04-04 03:48:01', '2019-04-04 03:48:01')
